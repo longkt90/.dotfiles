@@ -1,0 +1,12 @@
+
+# Homebrew added by Self Service Tue Apr  7 17:03:50 +07 2026
+eval $(/opt/homebrew/bin/brew shellenv)
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PATH="$HOME/.local/bin:$PATH"
