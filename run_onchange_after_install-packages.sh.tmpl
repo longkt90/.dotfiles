@@ -1,0 +1,16 @@
+#!/bin/bash
+# run_onchange_after: This script runs after chezmoi apply, whenever the Brewfile changes
+
+set -e
+
+echo "Installing Homebrew packages..."
+
+if command -v brew >/dev/null 2>&1; then
+    brew bundle --file=~/.Brewfile
+else
+    echo "Error: Homebrew is not installed"
+    exit 1
+fi
+
+# Hash of Brewfile to trigger re-run when it changes:
+# {{ include "dot_Brewfile.tmpl" | sha256sum }}
