@@ -1,19 +1,9 @@
 # Brewfile — managed by chezmoi
 # Install: brew bundle --file=~/.Brewfile
 # Check:   brew bundle check --file=~/.Brewfile
-#
-# Layers: base (always) → dev (languages, infra) → apps (GUI casks)
-# Control via chezmoi init prompts: headless, use_1password
-
-# ══════════════════════════════════════════════════════════════════════
-# BASE — essentials for every machine
-# ══════════════════════════════════════════════════════════════════════
-
-# ── Taps ──────────────────────────────────────────────────────────────
 
 # ── Shell & Terminal ──────────────────────────────────────────────────
 brew "fish"
-brew "tmux"
 
 # ── Core CLI (modern replacements) ───────────────────────────────────
 brew "git"
