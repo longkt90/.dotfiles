@@ -1,0 +1,15 @@
+# SSH config — managed by chezmoi
+
+# Global defaults
+Host *
+  AddKeysToAgent yes
+  IdentitiesOnly yes
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+# OrbStack Linux VMs
+Include ~/.orbstack/ssh/config
+
+# Modular host configs
+Include config.d/*
