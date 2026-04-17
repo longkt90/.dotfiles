@@ -12,5 +12,9 @@ else
     exit 1
 fi
 
+# Register docker-compose as a docker CLI plugin (needed with colima)
+mkdir -p ~/.docker/cli-plugins
+ln -sfn "$(brew --prefix)/opt/docker-compose/bin/docker-compose" ~/.docker/cli-plugins/docker-compose
+
 # Hash of Brewfile to trigger re-run when it changes:
 # {{ include "dot_Brewfile.tmpl" | sha256sum }}
