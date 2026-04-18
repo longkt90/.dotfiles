@@ -31,6 +31,9 @@ This repository uses chezmoi's template system to keep personal information priv
 ```bash
 # Create your chezmoi config with personal data
 cat > ~/.config/chezmoi/chezmoi.toml << EOF
+# Absolute path to this cloned repository (adjust for your machine and clone location)
+sourceDir = "/Users/username/.dotfiles"
+
 [data]
     name = "Your Name"
     email = "your.email@example.com"
@@ -38,7 +41,7 @@ cat > ~/.config/chezmoi/chezmoi.toml << EOF
 EOF
 ```
 
-These variables can then be referenced in template files (e.g., `dot_gitconfig.tmpl`) using `{{ .name }}`, `{{ .email }}`, etc.
+`sourceDir` must be the absolute path to your clone (change it if yours differs). These variables can then be referenced in template files (e.g., `dot_gitconfig.tmpl`) using `{{ .name }}`, `{{ .email }}`, etc.
 
 ## Quick Start
 
