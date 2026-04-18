@@ -11,7 +11,12 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# Launch fish shell if available (non-login, interactive)
-if [[ -x /opt/homebrew/bin/fish && $- == *i* && -z "$FISH_VERSION" ]]; then
-    exec /opt/homebrew/bin/fish
+# Launch fish shell if available, current shell is not fish, and we're in an interactive shell
+if [[ -x /opt/homebrew/bin/fish && $- == *i* && -z "$FISH_VERSION" && -z "$ZSH_FISH_LAUNCHED" ]]; then
+    # Prevent recursive launching if something sources us again
+    export ZSH_FISH_LAUNCHED=1
+    # Only exec fish if the current shell is not fish
+    if [[ "$(ps -p $$ -o comm=)" != "fish" ]]; then
+        exec /opt/homebrew/bin/fish
+    fi
 fi
