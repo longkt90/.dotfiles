@@ -12,6 +12,8 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   pager = delta
+  # Placeholder key on purpose. Set the real key per repo: git use-key <name>
+  sshCommand = ssh -F /dev/null -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -i {{ .chezmoi.homeDir }}/.ssh/mykey.pub -o IdentityAgent={{ .chezmoi.homeDir }}/.1password-agent.sock
 [interactive]
   diffFilter = delta --color-only
 [delta]
@@ -34,6 +36,7 @@
   st = status
   up = pull --rebase --autostash
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  use-key = "!f() { git config --local core.sshCommand \"ssh -F /dev/null -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new -i $HOME/.ssh/$1.pub -o IdentityAgent=$HOME/.1password-agent.sock\"; }; f"
 [commit]
   template = ~/.gitmessage
 [rebase]
