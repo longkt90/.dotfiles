@@ -2,9 +2,13 @@
 rust = "latest"
 nodejs = "22.14.0"
 python = "3.12.10"
+uv = "latest"
+bun = "latest"
 go = "1.24.2"
 ruby = "3.3.8"
 1password-cli = "latest"
+"npm:wrangler" = "latest"
+ruff = "0.17.1"
 
 [settings]
 idiomatic_version_file_enable_tools = ["ruby"]
