@@ -1,0 +1,11 @@
+# <scope>: <summary in the imperative, 50 chars max>
+#
+# Why this change is needed. Wrap lines at 72 chars.
+#
+# Lines that start with # are dropped from the commit message.
+#
+# To use a different template on this machine, add to ~/.gitconfig.local:
+#   [commit]
+#     template = ~/.gitmessage.local
+# To use a different template in one repo:
+#   git config --local commit.template .gitmessage
